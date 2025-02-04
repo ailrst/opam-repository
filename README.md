@@ -24,7 +24,7 @@ documentation to a gh-pages branch.
 2. Ensure you have a good `CHANGES.md` and `LICENSE` file:
 
 ```sh
-dune build            # ensure you have opam files built
+dune build            # ensure you have opam files generated
 dune-release lint     # ensure repo is well-structured
 ```
   
@@ -47,7 +47,7 @@ More info: `dune-release help`
 dune-release lint
 dune-release tag
 dune-release distrib
-dune-release publish
+dune-release publish distrib
 dune-release opam pkg
 dune-release opam submit  --opam-repo=ailrst/opam-repository
 ```
