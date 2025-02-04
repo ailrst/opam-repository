@@ -1,0 +1,41 @@
+opam-version: "2.0"
+synopsis: "LSP for BASIL IR"
+maintainer: ["ailrst"]
+authors: ["ailrst"]
+license: "Apache-2.0"
+tags: ["lsp"]
+homepage: "https://github.com/ailrst/basls"
+doc: "https://ailrst.github.io/basls"
+bug-reports: "https://github.com/ailrst/basls/issues"
+depends: [
+  "ocaml"
+  "dune" {>= "3.16"}
+  "linol"
+  "linol-lwt"
+  "lsp"
+  "odoc" {with-doc}
+]
+build: [
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+]
+dev-repo: "git+https://github.com/ailrst/basls.git"
+url {
+  src:
+    "https://github.com/ailrst/basls/releases/download/0.0.1/basil_lsp-0.0.1.tbz"
+  checksum: [
+    "sha256=037dbe948721f3178731faefb42ef0b00ee5c219241f73788db97e0d5750f805"
+    "sha512=29b5d88f44767d5611861003726bb4001a853ef38b688ddbdc5432a3d25f9d19f230833c205e3d64eb674ae94f44305f6ce58646c58477da4854eed41e5533af"
+  ]
+}
+x-commit-hash: "a637357c485aa2570515baf496b3023d91bbc3ad"
