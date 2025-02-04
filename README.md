@@ -2,11 +2,12 @@
 
 # UQ-PAC  opam repository
 
+[package list](packages.md)
 
 ## Installing Packages
 
 ```sh
-opam repository add pac https://github.com/ailrst/opam-repository
+opam repository add pac https://github.com/ailrst/opam-repository.git
 opam install $pkg_name
 ```
 
