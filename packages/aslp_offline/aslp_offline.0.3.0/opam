@@ -1,0 +1,39 @@
+opam-version: "2.0"
+synopsis: "AArch64 Offline lifter"
+maintainer: ["UQ-PAC"]
+authors: ["UQ-PAC"]
+license: "BSD-3-Clause"
+homepage: "https://github.com/UQ-PAC/aslp"
+bug-reports: "https://github.com/UQ-PAC/aslp/issues"
+depends: [
+  "dune" {>= "2.9"}
+  "ocaml" {>= "4.14"}
+  "asli"
+  "odoc" {with-doc}
+]
+build: [
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "--promote-install-files=false"
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+  ["dune" "install" "-p" name "--create-install-files" name]
+]
+dev-repo: "git+https://github.com/UQ-PAC/aslp.git"
+url {
+  src:
+    "https://github.com/UQ-PAC/aslp/releases/download/0.3.0/asli-0.3.0.tbz"
+  checksum: [
+    "sha256=fb6e5256779ffd28cfc7440f84a139d934acc3c7060f50a65f7e2c0a8f0bcfd3"
+    "sha512=39b2f5ff5b49ba0971d60fe5f40bb0865b60131713c80544bb6d7133b27f3351e0b2ebedb630fb05ef4565db9d584958528ef55d2bca37a338a380827062abe3"
+  ]
+}
+x-commit-hash: "e43aeb2039b4d1b6e058f325417cced0b1814632"
