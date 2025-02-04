@@ -38,3 +38,16 @@ dune-release --opam-repo=ailrst/opam-repository
 ```
 
 More info: `dune-release help`
+
+### Release without publishing docs
+
+1. Add entry to CHANGES.md, update package version numbers
+
+```
+dune-release lint
+dune-release tag
+dune-release distrib
+dune-release publish
+dune-release opam pkg
+dune-release opam submit  --opam-repo=ailrst/opam-repository
+```
