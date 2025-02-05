@@ -1,0 +1,43 @@
+opam-version: "2.0"
+synopsis: "REST server for ASLp"
+maintainer: ["ailrst"]
+authors: ["ailrst"]
+license: "BSD-3-Clause"
+homepage: "https://github.com/UQ-PAC/aslp-rpc"
+doc: "https://uq-pac.github.io/aslp-rpc/aslp_server_http"
+bug-reports: "https://github.com/UQ-PAC/aslp-rpc/issues"
+depends: [
+  "dune" {>= "3.6"}
+  "ocaml" {>= "5.0"}
+  "eio"
+  "cohttp-eio"
+  "eio_main"
+  "yojson"
+  "asli"
+  "odoc" {with-doc}
+]
+build: [
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+]
+dev-repo: "git+https://github.com/UQ-PAC/aslp-rpc.git"
+pin-depends: ["asli.dev" "git+https://github.com/UQ-PAC/aslp.git"]
+url {
+  src:
+    "https://github.com/UQ-PAC/aslp-rpc/releases/download/v0.1.2/aslp-rpc-0.1.2.tbz"
+  checksum: [
+    "sha256=8c3352d1403f5b7f1335a15b4370a65e6ff25f5e4403089386dbe5eb0df7652a"
+    "sha512=f330af598c0aaa17801d2bfbfebc7c75668981e25fed9730e185e5fdd3dbe81c3a3782b6250de299195ebeac7c4084ce5d32e4ac83dec2a3f3ff7c0dbabe22a9"
+  ]
+}
+x-commit-hash: "d4b772fc81e95c45b7bff517e56f881e6ed55104"
