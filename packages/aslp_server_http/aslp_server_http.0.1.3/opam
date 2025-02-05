@@ -35,8 +35,8 @@ url {
   src:
     "https://github.com/UQ-PAC/aslp-rpc/releases/download/v0.1.3/aslp-rpc-0.1.3.tbz"
   checksum: [
-    "sha256=2698cfbdb97462386af570b3dc98afca8b59d31a68c94406e792f7e87751e48c"
-    "sha512=59855e80b2522bcf8d28d8f8f5c8115a118dded5dd5604cda7e48659eb04c1beaa868c2f43ddf4724670a5115d7f16a95d02e2a2872eb0605ccd0835d7c2fecc"
+    "sha256=4368009a420429bc9d5e3cfaab2bc718fc696ec64906e76e6025e52315b6bce5"
+    "sha512=f8c3f59f6ff05cfbb08bc957954e9b208b365f3619e5b6d7f4490baa5eab0a97a6fe696f080be6d8d0fb6f697117ff67c528c6870d29766298d0a4ba956ab85a"
   ]
 }
-x-commit-hash: "03726cca81d7ce60d03454b9358d2f9bc003bd65"
+x-commit-hash: "360d4e3e2da0e6801cf90f93903b40e43fd9cbfd"
