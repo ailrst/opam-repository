@@ -1,0 +1,44 @@
+opam-version: "2.0"
+synopsis: "Add semantic information to the IR of a disassembled ARM64 binary"
+maintainer: ["UQ-PAC"]
+authors: ["Chris Binggeli/GNUNotUsername"]
+license: "Apache-2.0"
+tags: ["decompilers" "instruction-lifters" "static-analysis"]
+homepage: "https://github.com/UQ-PAC/gtirb-semantics"
+bug-reports: "https://github.com/UQ-PAC/gtirb-semantics/issues"
+depends: [
+  "ocaml"
+  "dune" {>= "3.6"}
+  "yojson"
+  "asli" {>= "0.3.0"}
+  "ocaml-protoc-plugin" {>= "6.1.0"}
+  "base64"
+  "aslp_client_server_ocaml" {>= "0.1.2"}
+  "lwt"
+  "mtime"
+  "odoc" {with-doc}
+]
+build: [
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+]
+dev-repo: "git+https://github.com/UQ-PAC/gtirb-semantics.git"
+url {
+  src:
+    "https://github.com/UQ-PAC/gtirb-semantics/releases/download/0.1.2/gtirb_semantics-0.1.2.tbz"
+  checksum: [
+    "sha256=ebccf843ba6607682ce725bc7a7556012221e316f3a7ebd5da498ed61f4f1175"
+    "sha512=70a2a066fa5f624809c4d6872e615ff15f1d2796aa413c517d69a70bedc4d9508c6cc3b9d46273a733b84514074dfa9f6ec5979d5ca649f05bcef7ec454a9005"
+  ]
+}
+x-commit-hash: "5eccdc6fab2ddf649de2ffe17f9ef79bcc0c9aa0"
