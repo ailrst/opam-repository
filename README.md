@@ -7,7 +7,7 @@
 ## Installing Packages
 
 ```sh
-opam repository add pac https://github.com/ailrst/opam-repository.git
+opam repository add pac https://github.com/uq-pac/opam-repository.git
 opam install $pkg_name
 ```
 
@@ -35,7 +35,7 @@ dune-release lint     # ensure repo is well-structured
 PR into this repository.
 
 ```sh
-dune-release --opam-repo=ailrst/opam-repository
+dune-release --opam-repo=uq-pac/opam-repository
 ```
 
 More info: `dune-release help`
